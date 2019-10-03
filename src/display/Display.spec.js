@@ -25,19 +25,19 @@ test("test string output when NOT locked", () => {
     getByText(/Unlocked/i);
 });
 
-test("test string output when closed", () => {
+test("test class output when closed", () => {
     const { getByText } = render(
         <Display locked={true} closed={true} />
     );
-    getByText(/Closed/i);
+    getByText(/Closed/i).classList.contains('red-led');;
 })
 
 
-test("test string output when NOT closes", () => {
+test("test class output when NOT closes", () => {
     const { getByText } = render(
         <Display locked={false} closed={false} />
     );
-    getByText(/Open/i);
+    getByText(/Open/i).classList.contains('green-led');
 })
 
 
